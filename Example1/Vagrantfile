@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   #Puedes ver mis movidas en https://github.com/konguele' > /etc/motd"
   
   config.vm.define :acl do |acl|
-  acl.vm.box = "bento/centos-8"
+  acl.vm.box = "almalinux/8"
   acl.vm.hostname = "Master.fcld.acl"
   acl.vm.network :private_network, ip: "192.168.56.105"
   acl.vm.provider :virtualbox do |vb|
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   
   config.vm.define :fcld do |fcld|
   fcld.vm.hostname = "Slave.fcld.acl"
-  fcld.vm.box = "bento/centos-7.6"
+  fcld.vm.box = "almalinux/8"
   fcld.vm.network :private_network, ip: "192.168.56.106"
   fcld.vm.provider :virtualbox do |vb|
   vb.memory = 2068
