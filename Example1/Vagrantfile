@@ -12,23 +12,23 @@ Vagrant.configure("2") do |config|
   
   config.vm.define :acl do |acl|
   acl.vm.box = "almalinux/8"
-  acl.vm.hostname = "Master.fcld.acl"
+  acl.vm.hostname = "master.fcld.acl"
   acl.vm.network :private_network, ip: "192.168.56.105"
   acl.vm.provider :virtualbox do |vb|
   vb.memory = 2068
   vb.cpus = 1
-  vb.name = "Master-CentOS-8"
+  vb.name = "master_db"
   end
   end
   
   config.vm.define :fcld do |fcld|
-  fcld.vm.hostname = "Slave.fcld.acl"
+  fcld.vm.hostname = "slave.fcld.acl"
   fcld.vm.box = "almalinux/8"
   fcld.vm.network :private_network, ip: "192.168.56.106"
   fcld.vm.provider :virtualbox do |vb|
   vb.memory = 2068
   vb.cpus = 1
-  vb.name = "Slave-CentOS-7"
+  vb.name = "slave_db"
   end
   end
   end
